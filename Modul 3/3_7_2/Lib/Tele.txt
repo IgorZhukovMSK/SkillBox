@@ -1,0 +1,3 @@
+App api_id: 334859
+App api_hash: 8e1c7a4429a8f9c38d010147c97cc049
+Production configuration: 149.154.167.50:443
