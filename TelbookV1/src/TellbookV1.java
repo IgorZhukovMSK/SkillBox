@@ -1,7 +1,10 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class TellbookV1 {
 
@@ -22,23 +25,21 @@ public class TellbookV1 {
 
             if (name.equals("LIST")) {
 
-                Set<Map.Entry<Integer, String>> entrySet = abonent.entrySet();
+                TreeSet<String> tempAbon = new TreeSet<>();
 
-                TreeMap<String,String> tempAbon = new TreeMap<>();
-
-                for (Map.Entry<Integer, String> pair : entrySet) {
+                for (Map.Entry<Integer, String> pair : abonent.entrySet()) {
 
                     String tempStr = pair.getValue();
                     String tempNum = pair.getKey().toString();
+                    String temp = String.join(" ", tempStr, tempNum);
 
-                    tempAbon.put(tempStr,tempNum);
+                    tempAbon.add(temp);
 
                 }
 
-                for (Map.Entry<String,String> pair : tempAbon.entrySet()){
-                    System.out.println("Имя аббонента " + pair.getKey() + " - номер аабонента " + pair.getValue());
+                for (String pair : tempAbon) {
+                    System.out.println(pair);
 
-                    //System.out.println(pair.getKey() + " " + pair.getValue() );
                 }
                 break;
             }
